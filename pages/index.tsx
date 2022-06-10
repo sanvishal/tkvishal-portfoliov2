@@ -8,7 +8,7 @@ import { NavBar } from '../components/NavBar';
 
 const Home: NextPage = () => {
   return (
-    <Container maxW="4xl" px={2}>
+    <Container maxW="4xl" px={3}>
       <NavBar />
       {/* <Blobs /> */}
       <Spacer w="full" h={10} />

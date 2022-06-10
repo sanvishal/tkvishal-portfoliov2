@@ -81,10 +81,20 @@ body {
   z-index: -99999999999;
   width: 100%;
   opacity: 0.4;
+  animation: breathe 5s linear infinite alternate;
   height: calc(100vh + 200px);
   pointer-events: none;
   transform: translateY(0px);
   background: var(--chakra-colors-bgGradient);
+}
+
+@keyframes breathe {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 0.5;
+  }
 }
 
 a {

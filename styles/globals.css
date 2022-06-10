@@ -1,16 +1,121 @@
-html,
+:root {
+  --dark-color: hsl(var(--hue), 100%, 9%);
+  --light-color: hsl(var(--hue), 95%, 98%);
+  --base: hsl(var(--hue), 95%, 50%);
+  --complimentary1: hsl(var(--hue-complimentary1), 95%, 50%);
+  --complimentary2: hsl(var(--hue-complimentary2), 95%, 50%);
+
+  --bg-gradient: linear-gradient(
+    to top left,
+    hsla(var(--hue), 95%, 99%, 0),
+    hsla(var(--hue), 95%, 84%)
+  );
+
+  --bg-gradient-dark: linear-gradient(
+    to top left,
+    hsla(var(--hue), 95%, 1%, 0),
+    hsla(var(--hue), 95%, 10%)
+  );
+}
+
+@font-face {
+  font-family: 'Avenir LT Std';
+  src: local('Avenir LT Std 55 Roman'), local('AvenirLTStd-Roman'),
+    url('/fonts/AvenirLTStd-Roman.woff2') format('woff2'),
+    url('/fonts/AvenirLTStd-Roman.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir LT Std';
+  src: local('Avenir LT Std 95 Black'), local('AvenirLTStd-Black'),
+    url('/fonts/AvenirLTStd-Black.woff2') format('woff2'),
+    url('/fonts/AvenirLTStd-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir LT Std';
+  src: local('Avenir LT Std 45 Book'), local('AvenirLTStd-Book'),
+    url('/fonts/AvenirLTStd-Book.woff2') format('woff2'),
+    url('/fonts/AvenirLTStd-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow-x: hidden;
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+#texture {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 999999999999;
+  width: 100%;
+  height: calc(100vh + 200px);
+  opacity: 0.15;
+  pointer-events: none;
+  transform: translateY(0px);
+}
+
+.gradiant-bg {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -99999999999;
+  width: 100%;
+  opacity: 0.4;
+  height: calc(100vh + 200px);
+  pointer-events: none;
+  transform: translateY(0px);
+  background: var(--chakra-colors-bgGradient);
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  /* background: linear-gradient(
+      to right,
+      var(--complimentary2),
+      var(--chakra-colors-hueColorSchemeDependent)
+    ),
+    linear-gradient(to right, var(--complimentary1), var(--base)); */
+  background: linear-gradient(to right, var(--complimentary2), var(--complimentary1)),
+    linear-gradient(to right, var(--complimentary1), var(--base));
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% calc(100%), 0 calc(100%);
+  background-repeat: no-repeat;
+  transition: background-size 200ms ease-in-out;
 }
 
-* {
-  box-sizing: border-box;
+a:hover,
+a:focus {
+  background-size: 0 0.1em, 100% 0.1em;
+}
+
+.gradiant-text {
+  background-image: linear-gradient(
+    45deg,
+    var(--base) 25%,
+    var(--complimentary1),
+    var(--complimentary2)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }

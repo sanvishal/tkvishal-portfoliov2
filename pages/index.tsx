@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import { Blobs } from '../components/Blobs';
 import { ChakraNextImage } from '../components/ChakraNextImage';
 import { FancyLink } from '../components/FancyLink';
+import { GradiantBg } from '../components/GradiantBg';
 import { GrainyTexture } from '../components/GrainyTexture';
 import { NavBar } from '../components/NavBar';
 
@@ -28,7 +29,7 @@ const Home: NextPage = () => {
         Software Engineer @ <FancyLink href="https://www.presidio.com/">Presidio</FancyLink>
       </Text>
       <GrainyTexture />
-      <div className="gradiant-bg" />
+      <GradiantBg />
     </Container>
   );
 };

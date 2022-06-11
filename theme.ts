@@ -42,6 +42,12 @@ export const theme = extendTheme({
         _dark:
           'linear-gradient(to top left, hsla(var(--hue), 95%, 1%, 0), hsla(var(--hue), 95%, 10%));',
       },
+      bgGradientComp: {
+        default:
+          'linear-gradient(to top left, hsla(var(--hue-complimentary1), 95%, 99%, 0), hsla(var(--hue-complimentary1), 92%, 84%))',
+        _dark:
+          'linear-gradient(to top left, hsla(var(--hue-complimentary1), 95%, 1%, 0), hsla(var(--hue-complimentary1), 95%, 10%));',
+      },
       bgGradientButton: {
         default:
           'linear-gradient(to bottom right, hsla(var(--hue-complimentary1), 95%, 90%), hsla(var(--hue), 92%, 90%))',

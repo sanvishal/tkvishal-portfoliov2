@@ -1,6 +1,6 @@
 import { Container, Spacer, Text } from '@chakra-ui/react';
 import type { NextPage } from 'next';
-import { Blobs } from '../components/Blobs';
+import BoidsSim from '../components/BoidsSim';
 import { ChakraNextImage } from '../components/ChakraNextImage';
 import { FancyLink } from '../components/FancyLink';
 import { GradiantBg } from '../components/GradiantBg';
@@ -30,6 +30,7 @@ const Home: NextPage = () => {
       </Text>
       <GrainyTexture />
       <GradiantBg />
+      {/* <BoidsSim /> */}
     </Container>
   );
 };

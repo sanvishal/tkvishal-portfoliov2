@@ -78,7 +78,7 @@ body {
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: -99999999999;
+  z-index: -99999;
   width: 100%;
   opacity: 0.4;
   /* animation: breathe 10s linear infinite alternate; */
@@ -90,6 +90,15 @@ body {
 
 .gradiant-bg-comp {
   background: var(--chakra-colors-bgGradientComp);
+}
+
+canvas {
+  background: transparent;
+  position: absolute;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -9999999999999;
 }
 
 @keyframes breathe {

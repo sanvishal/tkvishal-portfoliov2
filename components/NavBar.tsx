@@ -19,7 +19,7 @@ export const NavBar = () => {
 
   return (
     <Flex as="nav" align="center" justify="space-between" wrap="wrap" py={3} color="white">
-      <Box>✨</Box>
+      <Box>💫</Box>
       <HStack>
         <motion.div
           whileTap={{ scale: 0.7, rotate: 420 }}

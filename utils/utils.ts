@@ -7,6 +7,14 @@ export function choose<T>(array: T[]): T {
 export const map = (n: number, start1: number, end1: number, start2: number, end2: number) =>
   ((n - start1) / (end1 - start1)) * (end2 - start2) + start2;
 
+export const debounce = (fn: Function, ms = 300) => {
+  let timeoutId: ReturnType<typeof setTimeout>;
+  return function (this: any, ...args: any[]) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => fn.apply(this, args), ms);
+  };
+};
+
 export const hslToHex = (h: number, s: number, l: number) => {
   l /= 100;
   const a = (s * Math.min(l, 1 - l)) / 100;

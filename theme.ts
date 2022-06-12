@@ -31,7 +31,6 @@ export const theme = extendTheme({
   semanticTokens: {
     colors: {
       contentColor: { default: 'gray.900', _dark: 'gray.100' },
-      linkUnderLineColor: { default: 'red', _dark: 'green' },
       hueColorSchemeDependent: {
         default: 'hsla(var(--hue), 95%, 98%, 0)',
         _dark: 'hsla(var(--hue), 100%, 9%, 0)',
@@ -40,7 +39,7 @@ export const theme = extendTheme({
         default:
           'linear-gradient(to top left, hsla(var(--hue), 95%, 99%, 0), hsla(var(--hue), 92%, 84%))',
         _dark:
-          'linear-gradient(to top left, hsla(var(--hue), 95%, 1%, 0), hsla(var(--hue), 95%, 10%));',
+          'linear-gradient(to top left, hsla(var(--hue), 95%, 1%, 0), hsla(var(--hue), 95%, 10%))',
       },
       bgGradientComp: {
         default:
@@ -53,6 +52,20 @@ export const theme = extendTheme({
           'linear-gradient(to bottom right, hsla(var(--hue-complimentary1), 95%, 90%), hsla(var(--hue), 92%, 90%))',
         _dark:
           'linear-gradient(to bottom right, hsla(var(--hue-complimentary1), 95%, 12%), hsla(var(--hue), 95%, 20%));',
+      },
+      bgGradientProj: {
+        default:
+          'linear-gradient(to bottom right, hsla(var(--hue-complimentary1), 95%, 90%, 0.5), hsla(var(--hue), 92%, 90%, 0.5))',
+        _dark:
+          'linear-gradient(to bottom right, hsla(var(--hue-complimentary1), 95%, 12%, 0.5), hsla(var(--hue), 95%, 20%, 0.5));',
+      },
+      dialogBg: {
+        default: 'hsla(var(--hue), 92%, 95%)',
+        _dark: 'hsla(var(--hue), 30%, 10%)',
+      },
+      iconBorderColor: {
+        default: 'rgba(0,0,0,0.1)',
+        _dark: 'rgba(255,255,255,0.09)',
       },
     },
   },

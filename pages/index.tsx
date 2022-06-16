@@ -48,7 +48,7 @@ const Home: NextPage = () => {
       <Spacer w="full" h={14} />
       <ProjectSection />
       <Spacer w="full" h={4} />
-      <GrainyTexture />
+      {/* <GrainyTexture /> */}
       <GradiantBg />
     </Container>
   );

@@ -51,7 +51,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
               width="70px"
               height="70px"
               quality={100}
-              style={{ zIndex: 2, filter: 'drop-shadow(0 1px 4px rgba(0, 0, 0, 0.10));' }}
+              style={{ zIndex: 2, filter: 'drop-shadow(0 1px 4px rgba(0, 0, 0, 0.10))' }}
             />
           </Box>
           <Text fontWeight="700" textShadow="0px 0px var(--chakra-colors-gray-500)">

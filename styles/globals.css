@@ -130,7 +130,7 @@ canvas {
   }
 }
 
-a {
+a.fancy {
   /* background: linear-gradient(
       to right,
       var(--complimentary2),
@@ -145,8 +145,8 @@ a {
   transition: background-size 200ms ease-in-out;
 }
 
-a:hover,
-a:focus {
+a.fancy:hover,
+a.fancy:focus {
   background-size: 0 0.1em, 100% 0.1em;
 }
 
@@ -161,4 +161,25 @@ a:focus {
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+}
+
+.rounded-img img {
+  border-radius: 6px;
+}
+
+.image-cont {
+  width: 100%;
+  position: relative;
+}
+
+.image-cont > span {
+  position: unset !important;
+  height: 100%;
+}
+
+.image-cont .image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
 }

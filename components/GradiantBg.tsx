@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export const GradiantBg = () => {
   const timeOffset = 6;
-  const [minOpacity, maxOpacity] = [0.1, 0.6];
+  const [minOpacity, maxOpacity] = [0.1, 0.7];
   return (
     <>
       <motion.div

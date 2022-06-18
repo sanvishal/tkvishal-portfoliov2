@@ -12,8 +12,10 @@ import {
   Box,
   VStack,
   HStack,
+  IconButton,
 } from '@chakra-ui/react';
 import { useState } from 'react';
+import { FiX } from 'react-icons/fi';
 import { LinkType, Project } from '../types';
 import { ChakraNextImage } from './ChakraNextImage';
 import { ProjectBody } from './ProjectBody';
@@ -106,16 +108,79 @@ const projects: Project[] = [
     name: 'Yata',
     image: '/images/yata.png',
     description: 'Project Management App based on Hashtags',
+    accentColor: '#fd554f',
+    links: [
+      {
+        type: LinkType.WEBSITE,
+        name: 'Visit Yata',
+        href: 'https://yataapp.vercel.app/',
+      },
+      {
+        type: LinkType.GITHUB,
+        name: 'View Source',
+        href: 'https://github.com/sanvishal/Yata',
+      },
+    ],
+    about: [
+      '"This app is currently offline"',
+      'Yata stands for Yet Another Todo App, but it is more of a project management app. You can create projects and add tasks under it',
+      'The best thing about Yata is that it works on hashtags, you can mention, colorcode hashtags on other tasks and they would get automagically interlinked',
+      'This project is made for a hackathon in about 10 days',
+    ],
+    images: [
+      {
+        link: '/images/yata/yata-1.png',
+        alt: 'A png showing the overview of Yata',
+      },
+      {
+        link: '/images/yata/yata-2.png',
+        alt: 'A png showing the overview of Yata',
+      },
+    ],
   },
   {
     name: 'WatchDog',
     image: '/images/watchdog.png',
     description: 'Firefigher monitoring dashboard',
+    accentColor: '#FA9E7A',
+    links: [
+      {
+        type: LinkType.WEBSITE,
+        name: 'Visit WatchDog',
+        href: 'https://watchdogapp.vercel.app/',
+      },
+      {
+        type: LinkType.GITHUB,
+        name: 'View Source',
+        href: 'https://github.com/sanvishal/watchdog',
+      },
+    ],
+    about: [
+      '"This app is currently offline"',
+      'This is a final year project that my team made for UG college degree',
+      'It is a dashboard built to monitor firefighers on their vitals, they would essntially carry a NodeMCU powered mini-transmitter that transmits all the vital data to a firebase realtime database, The react dashboard then shows the data on a pretty graphical format.',
+      'It has various alarms for which the dashboard operators would recieve alerts on, for example, they would be getting warning and alerts when CO2 or particulate matter gets below a certain threshold',
+      'I mostly worked on interfacing the hardware with firebase and building out the frontend app',
+    ],
+    images: [
+      {
+        link: '/images/watchdog/watchdog-1.png',
+        alt: 'A png showing the overview of watchdog app',
+      },
+    ],
   },
   {
     name: '...and many more',
     image: '/images/github.png',
     description: 'more experiments 🔬',
+    accentColor: '#333333',
+    links: [
+      {
+        type: LinkType.GITHUB,
+        name: 'View My GitHub',
+        href: 'https://github.com/sanvishal',
+      },
+    ],
   },
 ];
 
@@ -150,6 +215,19 @@ export const ProjectSection = () => {
           );
         })}
       </SimpleGrid>
+      <IconButton
+        icon={<FiX size="24" />}
+        aria-label="modal-close-button, press escape to close too"
+        pos="fixed"
+        top="20px"
+        right="20px"
+        size="lg"
+        zIndex="1000000000"
+        onClick={onClose}
+        transition="opacity 0.2s ease-in-out"
+        opacity={isOpen ? 1 : 0}
+        pointerEvents={isOpen ? 'unset' : 'none'}
+      ></IconButton>
       <Modal isOpen={isOpen} onClose={onClose} size="3xl" motionPreset="slideInBottom">
         <ModalOverlay />
         <ModalContent bg="dialogBg" position="relative" overflow="hidden" p={3}>

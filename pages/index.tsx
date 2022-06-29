@@ -1,4 +1,4 @@
-import { Center, Container, Divider, Spacer, Text } from '@chakra-ui/react';
+import { Box, Center, Container, Divider, Spacer, Text, VStack } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import { ChakraNextImage } from '../components/ChakraNextImage';
 import { FancyLink } from '../components/FancyLink';
@@ -6,12 +6,14 @@ import { GradiantBg } from '../components/GradiantBg';
 import { GrainyTexture } from '../components/GrainyTexture';
 import { NavBar } from '../components/NavBar';
 import { ProjectSection } from '../components/ProjectSection';
+import { Socials } from '../components/Socials/Socials';
 
 const Home: NextPage = () => {
   return (
     <Container maxW="3xl" px={3}>
       <NavBar />
       <Spacer w="full" h={10} />
+      <Socials />
       <ChakraNextImage
         src="/images/tk.png"
         width={100}
@@ -47,6 +49,7 @@ const Home: NextPage = () => {
       <Center>🌻</Center>
       <Spacer w="full" h={14} />
       <ProjectSection />
+      <Socials isMobile />
       <Spacer w="full" h={4} />
       {/* <GrainyTexture /> */}
       <GradiantBg />

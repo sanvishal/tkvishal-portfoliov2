@@ -67,6 +67,14 @@ export const theme = extendTheme({
         default: 'rgba(0,0,0,0.1)',
         _dark: 'rgba(255,255,255,0.09)',
       },
+      socialIconColor: {
+        default: 'gray.600',
+        _dark: 'gray.400',
+      },
+      socialIconBgColor: {
+        default: 'rgba(0,0,0,0.06)',
+        _dark: 'rgba(255,255,255,0.06)',
+      },
     },
   },
 });

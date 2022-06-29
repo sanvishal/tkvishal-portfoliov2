@@ -12,6 +12,11 @@ export enum LinkType {
   'GITHUB' = 'GITHUB',
   'WEBSITE' = 'WEBSITE',
   'BLOG' = 'BLOG',
+  'TWITTER' = 'TWITTER',
+  'LINKEDIN' = 'LINKEDIN',
+  'DRIBBBLE' = 'DRIBBBLE',
+  'WHATSAPP' = 'WHATSAPP',
+  'MAIL' = 'MAIL',
 }
 
 export type ProjectLink = {

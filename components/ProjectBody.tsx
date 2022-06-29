@@ -19,20 +19,8 @@ import { SiHashnode } from 'react-icons/si';
 import { LinkType, Project, ProjectLink } from '../types';
 import { HexToHSL, isColorTooDark } from '../utils/utils';
 import { ChakraNextImage } from './ChakraNextImage';
+import { LinkIcon } from './LinkIcon';
 import { RelativeImage } from './RelativeImage';
-
-const LinkIcon = ({ type, ...props }: { type: LinkType } & IconBaseProps) => {
-  switch (type) {
-    case LinkType.GITHUB:
-      return <AiFillGithub {...props} />;
-    case LinkType.WEBSITE:
-      return <FiGlobe {...props} />;
-    case LinkType.BLOG:
-      return <SiHashnode {...props} />;
-    default:
-      return <FiLink {...props} />;
-  }
-};
 
 const getLinkColor = (type: LinkType): string => {
   switch (type) {

@@ -194,6 +194,26 @@ export const projects: Project[] = [
     ],
   },
   {
+    name: 'Old Website',
+    image: '/images/oldme.png',
+    description: 'Just the old 2018 me ✨',
+    accentColor: '#fd4445',
+    links: [
+      {
+        type: LinkType.WEBSITE,
+        name: 'Visit Old Website',
+        href: 'https://tkvishalold.vercel.app/',
+      },
+      {
+        type: LinkType.GITHUB,
+        name: 'View Source',
+        href: 'https://github.com/sanvishal/new-portfolio',
+      },
+    ],
+    about: ['some people like the old design better lol :P'],
+    images: [],
+  },
+  {
     name: '...and many more',
     image: '/images/github.png',
     description: 'more experiments 🔬',

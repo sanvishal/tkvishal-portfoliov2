@@ -94,6 +94,19 @@ body {
   transform: translateY(0px);
 }
 
+@media only screen and (-moz-min-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-pixel-ratio: 2) {
+  #texture.dark-tex {
+    filter: contrast(30%) brightness(100%) !important;
+  }
+
+  #texture.light-tex {
+    filter: contrast(20%) brightness(30%) !important;
+  }
+}
+
 .gradiant-bg {
   position: fixed;
   top: 0px;
@@ -182,4 +195,20 @@ a.fancy:focus {
   width: 100% !important;
   position: relative !important;
   height: unset !important;
+}
+
+#nprogress .bar {
+  background: linear-gradient(to right, var(--complimentary2), var(--complimentary1)),
+    linear-gradient(to right, var(--complimentary1), var(--base)) !important;
+}
+
+#nprogress .spinner-icon {
+  display: none;
+  border-top-color: var(--complimentary2) !important;
+  border-left-color: var(--complimentary2) !important;
+}
+
+.special-grid > *:nth-child(4n + 1),
+.special-grid > *:nth-child(4n + 4) {
+  grid-column: auto / span 2;
 }

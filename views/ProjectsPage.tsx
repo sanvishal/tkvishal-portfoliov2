@@ -16,12 +16,12 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { FiX } from 'react-icons/fi';
+import { ChakraNextImage } from '../components/ChakraNextImage';
+import { ProjectBody } from '../components/ProjectBody';
+import { ProjectCard } from '../components/ProjectCard';
 import { projects } from '../data';
-import { ChakraNextImage } from './ChakraNextImage';
-import { ProjectBody } from './ProjectBody';
-import { ProjectCard } from './ProjectCard';
 
-export const ProjectSection = () => {
+export const ProjectsPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedProject, setSelectedProject] = useState<number>(0);
 
@@ -32,21 +32,17 @@ export const ProjectSection = () => {
 
   return (
     <>
-      <Center>
-        <Text fontWeight="700" fontSize="xl">
-          Projects I&apos;ve worked on 🏗️
-        </Text>
-      </Center>
-      <Spacer w="full" h={6} />
+      <Text fontWeight="700" fontSize="2xl">
+        Projects
+      </Text>
+      <Text fontWeight="400" fontSize="md" opacity="0.5">
+        some made as side projects, some made for hackathons
+      </Text>
+      <Spacer w="full" h={10} />
       <SimpleGrid columns={{ base: 2, md: 3 }} spacing={8}>
         {projects.map((project, idx) => {
           return (
-            <Box
-              onClick={() => {
-                handleProjectOpen(idx);
-              }}
-              key={project.name}
-            >
+            <Box onClick={() => handleProjectOpen(idx)} key={project.name}>
               <ProjectCard project={project} />
             </Box>
           );

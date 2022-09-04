@@ -27,6 +27,16 @@ export const theme = extendTheme({
         color: mode('gray.900', 'gray.100')(props),
       }),
     },
+    Tooltip: {
+      baseStyle: (props: any) => ({
+        borderRadius: '7px',
+        border: mode(
+          '1px solid hsla(var(--hue), 60%, 10%, 0.3)',
+          '1px solid hsla(var(--hue), 92%, 60%, 0.3)'
+        )(props),
+        background: mode('hsla(var(--hue), 70%, 40%)', 'hsla(var(--hue), 60%, 80%)')(props),
+      }),
+    },
   },
   semanticTokens: {
     colors: {
@@ -49,9 +59,9 @@ export const theme = extendTheme({
       },
       bgGradientButton: {
         default:
-          'linear-gradient(to bottom right, hsla(var(--hue-complimentary1), 95%, 90%), hsla(var(--hue), 92%, 90%))',
+          'linear-gradient(to bottom right, hsla(var(--hue-complimentary1), 95%, 80%), hsla(var(--hue), 92%, 80%))',
         _dark:
-          'linear-gradient(to bottom right, hsla(var(--hue-complimentary1), 95%, 12%), hsla(var(--hue), 95%, 20%));',
+          'linear-gradient(to bottom right, hsla(var(--hue-complimentary1), 95%, 20%), hsla(var(--hue), 95%, 20%))',
       },
       bgGradientProj: {
         default:
@@ -67,11 +77,11 @@ export const theme = extendTheme({
         default: 'rgba(0,0,0,0.1)',
         _dark: 'rgba(255,255,255,0.09)',
       },
-      socialIconColor: {
-        default: 'gray.600',
-        _dark: 'gray.400',
+      commonIconColor: {
+        default: '#333333',
+        _dark: 'white',
       },
-      socialIconBgColor: {
+      commonIconBgColor: {
         default: 'rgba(0,0,0,0.06)',
         _dark: 'rgba(255,255,255,0.06)',
       },

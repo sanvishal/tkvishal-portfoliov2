@@ -42,16 +42,19 @@ export const SocialIcon = ({
         />
       }
       transition="all 0.4s ease-in-out"
-      isRound
+      borderRadius={10}
       bg="transparent"
-      color="socialIconColor"
+      color="commonIconColor"
+      opacity="0.8"
       _hover={{
-        background: type !== LinkType.GITHUB ? bgColor : 'socialIconBgColor',
-        color: type !== LinkType.GITHUB ? iconColor : 'socialIconColor',
+        opacity: 1,
+        background: type !== LinkType.GITHUB ? bgColor : 'commonIconBgColor',
+        color: type !== LinkType.GITHUB ? iconColor : 'commonIconColor',
       }}
       _focus={{
-        background: type !== LinkType.GITHUB ? bgColor : 'socialIconBgColor',
-        color: type !== LinkType.GITHUB ? iconColor : 'socialIconColor',
+        opacity: 1,
+        background: type !== LinkType.GITHUB ? bgColor : 'commonIconBgColor',
+        color: type !== LinkType.GITHUB ? iconColor : 'commonIconColor',
       }}
       size={isMobile ? 'lg' : 'md'}
     ></IconButton>

@@ -2,6 +2,51 @@ import { LinkType, Project } from './types';
 
 export const projects: Project[] = [
   {
+    name: 'Wrighter',
+    image: '/images/wrighter.png',
+    description: 'Powerful Markdown editor and writing companion',
+    accentColor: '#222326',
+    about: [
+      'wrighter is a modern WYSIWYM #tag based markdown editor on the web. wrighter\'s "bites" help you manage unorganised thoughts which you can later use while writing, you can use wrighter to even publish your blogs or use it just as an editor without signing up!',
+      `Wrighter is a project that I've been wanting to make for a very long time, I've used almost all the popular markdown editors out there. They lacked the most important features that "I" needed the most.`,
+      "I wanted a distraction-free markdown editor on the web that is usable in any form factor. Most markdown editors are either too cluttered or too minimal(hard to find). There are only two extremes. I wanted an app that sits in the middle, it should be distraction-free while also having the ability to quickly provide all of the application's functionality with a few key taps.",
+      'wrighter aims to be that + some more, ir is currently open source and contributions are welcome!',
+    ],
+    images: [
+      { link: '/images/wrighter/wr-1.png', alt: "All of wrighter's features" },
+      {
+        link: '/images/wrighter/wr-2.gif',
+        alt: "wrighter's command bar and editor",
+      },
+      { link: '/images/wrighter/wr-3.gif', alt: "wrighter's powerful command bar" },
+      {
+        link: '/images/wrighter/wr-4.png',
+        alt: "wrighter's bite funcationality",
+      },
+      {
+        link: '/images/wrighter/wr-5.gif',
+        alt: "wrighter's bite funcationality in wrightes",
+      },
+    ],
+    links: [
+      {
+        type: LinkType.WEBSITE,
+        name: 'Visit Wrighter',
+        href: 'https://wrighter.vercel.app/',
+      },
+      {
+        type: LinkType.GITHUB,
+        name: 'View Source',
+        href: 'https://github.com/sanvishal/wrighter',
+      },
+      {
+        type: LinkType.BLOG,
+        name: 'Read About it',
+        href: 'https://vishaltk.hashnode.dev/introducing-wrighter-a-powerful-markdown-blogger-a-writing-companion',
+      },
+    ],
+  },
+  {
     name: 'TeenyTools',
     image: '/images/teenytools.png',
     description: 'All in one tool for designers & developers',

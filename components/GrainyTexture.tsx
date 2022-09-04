@@ -6,11 +6,10 @@ export const GrainyTexture = () => {
   return (
     <svg
       id="texture"
+      className={colorMode === 'dark' ? 'dark-tex' : 'light-tex'}
       style={{
         filter:
-          colorMode === 'dark'
-            ? 'contrast(30%) brightness(80%)'
-            : 'contrast(100%) brightness(100%)',
+          colorMode === 'dark' ? 'contrast(30%) brightness(80%)' : 'contrast(100%) brightness(60%)',
       }}
     >
       <filter id="noise">

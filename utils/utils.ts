@@ -15,6 +15,8 @@ export const debounce = (fn: Function, ms = 300) => {
   };
 };
 
+export const clamp = (val: number, min: number, max: number) => Math.min(Math.max(val, min), max);
+
 export const hslToHex = (h: number, s: number, l: number) => {
   l /= 100;
   const a = (s * Math.min(l, 1 - l)) / 100;

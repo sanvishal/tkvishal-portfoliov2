@@ -1,24 +1,16 @@
 import {
-  Box,
   Button,
   Center,
   HStack,
   Spacer,
   Text,
   useBreakpointValue,
-  useColorMode,
   useColorModeValue,
   VStack,
 } from '@chakra-ui/react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { IconBaseProps } from 'react-icons';
-import { AiFillGithub } from 'react-icons/ai';
-import { FiGlobe, FiLink } from 'react-icons/fi';
-import { SiHashnode } from 'react-icons/si';
 import { LinkType, Project, ProjectLink } from '../types';
 import { HexToHSL, isColorTooDark } from '../utils/utils';
-import { ChakraNextImage } from './ChakraNextImage';
 import { LinkIcon } from './LinkIcon';
 import { RelativeImage } from './RelativeImage';
 

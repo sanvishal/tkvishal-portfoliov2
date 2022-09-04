@@ -7,9 +7,11 @@ export const Socials = ({ isMobile = false }: { isMobile?: boolean }) => {
   return (
     <Box
       display={{ base: 'block', md: isMobile ? 'none' : 'block' }}
-      pos={isMobile ? 'relative' : 'sticky'}
+      pos={isMobile ? 'fixed' : 'sticky'}
       w={isMobile ? 'full' : 'auto'}
-      top="40px"
+      top={isMobile ? 'unset' : '40px'}
+      left={isMobile ? '0px' : 'unset'}
+      bottom={isMobile ? '0px' : 'unset'}
       my={isMobile ? 10 : 0}
     >
       <Stack
@@ -22,7 +24,7 @@ export const Socials = ({ isMobile = false }: { isMobile?: boolean }) => {
         <SocialIcon type={LinkType.GITHUB} link={links[LinkType.GITHUB]} isMobile={isMobile} />
         <SocialIcon type={LinkType.DRIBBBLE} link={links[LinkType.DRIBBBLE]} isMobile={isMobile} />
         <SocialIcon type={LinkType.LINKEDIN} link={links[LinkType.LINKEDIN]} isMobile={isMobile} />
-        <SocialIcon type={LinkType.WHATSAPP} link={links[LinkType.WHATSAPP]} isMobile={isMobile} />
+        {/* <SocialIcon type={LinkType.WHATSAPP} link={links[LinkType.WHATSAPP]} isMobile={isMobile} /> */}
       </Stack>
     </Box>
   );

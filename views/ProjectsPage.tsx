@@ -14,12 +14,27 @@ import {
   HStack,
   IconButton,
 } from '@chakra-ui/react';
+import { motion, Variants } from 'framer-motion';
 import { useState } from 'react';
 import { FiX } from 'react-icons/fi';
 import { ChakraNextImage } from '../components/ChakraNextImage';
 import { ProjectBody } from '../components/ProjectBody';
 import { ProjectCard } from '../components/ProjectCard';
 import { projects } from '../data';
+
+const MotionBox = motion(Box);
+
+const fadeInUp: Variants = {
+  from: {
+    opacity: 0,
+    y: 5,
+  },
+  to: {
+    opacity: 1,
+    y: 0,
+  },
+  exit: { opacity: 0, transition: { delay: 0, duration: 0.15 } },
+};
 
 export const ProjectsPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -32,19 +47,35 @@ export const ProjectsPage = () => {
 
   return (
     <>
-      <Text fontWeight="700" fontSize="2xl">
-        Projects
-      </Text>
-      <Text fontWeight="400" fontSize="md" opacity="0.5">
-        some made as side projects, some made for hackathons
-      </Text>
+      <MotionBox
+        variants={fadeInUp}
+        initial="from"
+        animate="to"
+        exit="exit"
+        transition={{ delay: 0 }}
+      >
+        <Text fontWeight="700" fontSize="2xl">
+          Projects
+        </Text>
+        <Text fontWeight="400" fontSize="md" opacity="0.5">
+          some made as side projects, some made for hackathons
+        </Text>
+      </MotionBox>
       <Spacer w="full" h={10} />
       <SimpleGrid columns={{ base: 2, md: 3 }} spacing={8}>
         {projects.map((project, idx) => {
           return (
-            <Box onClick={() => handleProjectOpen(idx)} key={project.name}>
+            <MotionBox
+              variants={fadeInUp}
+              initial="from"
+              animate="to"
+              exit="exit"
+              onClick={() => handleProjectOpen(idx)}
+              key={project.name}
+              transition={{ delay: (idx + 1) / 20 }}
+            >
               <ProjectCard project={project} />
-            </Box>
+            </MotionBox>
           );
         })}
       </SimpleGrid>

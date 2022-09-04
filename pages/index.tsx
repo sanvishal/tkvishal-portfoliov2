@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import type { NextPage } from 'next';
 import { Content } from '../components/Content';
 import { HomePage } from '../views/HomePage';

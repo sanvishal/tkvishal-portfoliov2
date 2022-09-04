@@ -140,20 +140,22 @@ export const NavBar = () => {
           transition={{ ease: 'easeInOut', duration: 0.2 }}
           style={{ position: 'relative' }}
         >
-          <IconButton
-            icon={
-              <Icon
-                as={FiGift}
-                color={colorMode === 'light' ? '#333333' : '#ffffff'}
-                strokeWidth={2.5}
-              />
-            }
-            aria-label="Change Color Theme"
-            onClick={changePalette}
-            bg="transparent"
-            _hover={{ background: 'transparent' }}
-            _focus={{ background: 'transparent' }}
-          />
+          <Tooltip label="random color palette">
+            <IconButton
+              icon={
+                <Icon
+                  as={FiGift}
+                  color={colorMode === 'light' ? '#333333' : '#ffffff'}
+                  strokeWidth={2.5}
+                />
+              }
+              aria-label="Change Color Theme"
+              onClick={changePalette}
+              bg="transparent"
+              _hover={{ background: 'transparent' }}
+              _focus={{ background: 'transparent' }}
+            />
+          </Tooltip>
         </motion.div>
       </HStack>
     </Flex>

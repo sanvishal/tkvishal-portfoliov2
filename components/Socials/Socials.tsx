@@ -41,7 +41,7 @@ export const Socials = ({ isMobile = false }: { isMobile?: boolean }) => {
               : `${IconColors[hoveredIcon.type]}20`
           }
           left="-50px"
-          transition="all 0.2s ease-in-out"
+          transition="all 0.2s cubic-bezier(0.6, 0.02, 0.05, 0.9)"
           top={`${(40 + 8) * hoveredIcon?.idx || 0}px`}
           borderRadius={10}
         ></Box>

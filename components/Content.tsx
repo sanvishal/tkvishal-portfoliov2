@@ -1,5 +1,5 @@
 import { Box, Container, Spacer } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { PropsWithChildren } from 'react';
 import { GradiantBg } from './GradiantBg';
 import { GrainyTexture } from './GrainyTexture';

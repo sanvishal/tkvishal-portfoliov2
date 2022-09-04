@@ -235,3 +235,14 @@ export const links = {
   [LinkType.LINKEDIN]: 'https://www.linkedin.com/in/tkvishal/',
   [LinkType.TWITTER]: 'https://twitter.com/tk_vishal_tk',
 };
+
+export const IconColors: Record<LinkType, string> = {
+  [LinkType.GITHUB]: '#171515',
+  [LinkType.DRIBBBLE]: '#ea4c89',
+  [LinkType.LINKEDIN]: '#0077b5',
+  [LinkType.WHATSAPP]: '#25D366',
+  [LinkType.MAIL]: '#EA4335',
+  [LinkType.TWITTER]: '#00acee',
+  [LinkType.WEBSITE]: '#EA4335',
+  [LinkType.BLOG]: '#3466f6',
+};

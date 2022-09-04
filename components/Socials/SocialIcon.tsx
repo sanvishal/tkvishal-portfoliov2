@@ -1,26 +1,18 @@
 import { Box, IconButton } from '@chakra-ui/react';
+import { IconColors } from '../../data';
 import { LinkType } from '../../types';
 import { LinkIcon } from '../LinkIcon';
-
-const IconColors: Record<LinkType, string> = {
-  [LinkType.GITHUB]: '#171515',
-  [LinkType.DRIBBBLE]: '#ea4c89',
-  [LinkType.LINKEDIN]: '#0077b5',
-  [LinkType.WHATSAPP]: '#25D366',
-  [LinkType.MAIL]: '#EA4335',
-  [LinkType.TWITTER]: '#00acee',
-  [LinkType.WEBSITE]: '#EA4335',
-  [LinkType.BLOG]: '#3466f6',
-};
 
 export const SocialIcon = ({
   type,
   link,
   isMobile = false,
+  onHover,
 }: {
   type: LinkType;
   link: string;
   isMobile?: boolean;
+  onHover: () => void;
 }) => {
   const iconColor = IconColors[type];
   const bgColor = `${iconColor}20`;
@@ -34,6 +26,7 @@ export const SocialIcon = ({
       aria-label={type}
       className="icon-btn"
       cursor="pointer"
+      onMouseEnter={onHover}
       icon={
         <LinkIcon
           type={type}

@@ -33,8 +33,11 @@ export const hslToHex = (h: number, s: number, l: number) => {
 export const HexToHSL = (hex: string) => {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 
+  // @ts-ignore
   var r = parseInt(result[1], 16);
+  // @ts-ignore
   var g = parseInt(result[2], 16);
+  // @ts-ignore
   var b = parseInt(result[3], 16);
 
   (r /= 255), (g /= 255), (b /= 255);
@@ -61,14 +64,14 @@ export const HexToHSL = (hex: string) => {
         break;
     }
 
-    h /= 6;
+    h = h && h / 6;
   }
 
   s = s * 100;
   s = Math.round(s);
   l = l * 100;
   l = Math.round(l);
-  h = Math.round(360 * h);
+  h = h && Math.round(360 * h);
 
   return { h, s, l };
 };

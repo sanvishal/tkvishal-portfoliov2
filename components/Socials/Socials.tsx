@@ -24,7 +24,7 @@ export const Socials = ({ isMobile = false }: { isMobile?: boolean }) => {
       top={isMobile ? 'unset' : '40px'}
       left={isMobile ? '0px' : 'unset'}
       bottom={isMobile ? '0px' : 'unset'}
-      my={isMobile ? 10 : 0}
+      my={isMobile ? 3 : 0}
       onMouseLeave={() => setIsHovering(false)}
     >
       {!isMobile && (

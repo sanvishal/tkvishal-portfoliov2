@@ -82,6 +82,16 @@ body {
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
+::-moz-selection {
+  color: hsl(var(--hue), 95%, 50%);
+  background: hsla(var(--hue), 95%, 50%, 0.06);
+}
+
+::selection {
+  color: hsl(var(--hue), 95%, 50%);
+  background: hsla(var(--hue), 95%, 50%, 0.06);
+}
+
 #texture {
   position: fixed;
   top: 0px;

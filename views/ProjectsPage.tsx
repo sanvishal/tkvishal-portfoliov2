@@ -62,7 +62,7 @@ export const ProjectsPage = () => {
         </Text>
       </MotionBox>
       <Spacer w="full" h={10} />
-      <SimpleGrid columns={{ base: 2, md: 3 }} spacing={8}>
+      <SimpleGrid columns={{ base: 2, md: 3 }} spacing={{ base: 4, md: 8 }}>
         {projects.map((project, idx) => {
           return (
             <MotionBox

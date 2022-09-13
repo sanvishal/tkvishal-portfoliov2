@@ -80,7 +80,6 @@ export const HomePage = () => {
           ~
         </Text>
         <Spacer w="full" h={14} />
-        <Center>🌻</Center>
       </MotionBox>
     </>
   );

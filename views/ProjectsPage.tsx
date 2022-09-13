@@ -89,8 +89,11 @@ export const ProjectsPage = () => {
         zIndex="1000000000"
         onClick={onClose}
         transition="opacity 0.2s ease-in-out"
-        opacity={isOpen ? 1 : 0}
+        opacity={isOpen ? 0.9 : 0}
+        color="commonIconColor"
         pointerEvents={isOpen ? 'unset' : 'none'}
+        bg="var(--chakra-colors-bgGradientButton)"
+        _hover={{ bg: 'var(--chakra-colors-bgGradientButton)' }}
       ></IconButton>
       <Modal isOpen={isOpen} onClose={onClose} size="3xl" motionPreset="slideInBottom">
         <ModalOverlay />

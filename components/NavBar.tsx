@@ -52,7 +52,7 @@ export const HeaderIcons = () => {
               as="a"
               aria-label="goto home"
               cursor="pointer"
-              icon={<FiHome style={{ width: '20px' }} />}
+              icon={<FiHome style={{ width: '20px' }} strokeWidth={2.5} />}
               transition="all 0.4s ease-in-out"
               borderRadius={10}
               color="commonIconColor"
@@ -82,7 +82,7 @@ export const HeaderIcons = () => {
               as="a"
               aria-label="goto projects"
               cursor="pointer"
-              icon={<FiStar style={{ width: '20px' }} />}
+              icon={<FiStar style={{ width: '20px' }} strokeWidth={2.5} />}
               transition="all 0.4s ease-in-out"
               borderRadius={10}
               color="commonIconColor"

@@ -140,7 +140,7 @@ export const NavBar = () => {
           transition={{ ease: 'easeInOut', duration: 0.2 }}
           style={{ position: 'relative' }}
         >
-          <Tooltip label="random color palette">
+          <Tooltip label="something special 🎱">
             <IconButton
               icon={
                 <Icon

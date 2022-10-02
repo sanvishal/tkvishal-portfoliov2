@@ -113,7 +113,15 @@ export const ProjectBody = ({ project }: { project: Project }) => {
       <Spacer w="full" h={6} />
       <VStack w="full" spacing={6}>
         {project?.images?.map((image) => {
-          return <RelativeImage key={image.link} alt={image.alt} src={image.link} />;
+          // return <RelativeImage key={image.link} alt={image.alt} src={image.link} />;
+          return (
+            <img
+              src={image.link}
+              alt={image.alt}
+              key={image.link}
+              style={{ borderRadius: '6px' }}
+            />
+          );
         })}
       </VStack>
     </>

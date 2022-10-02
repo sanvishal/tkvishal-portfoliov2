@@ -9,6 +9,7 @@ export const RelativeImage = ({ ...props }: ImageProps) => {
         layout="fill"
         className="image"
         quality={100}
+        alt="image"
         placeholder="blur"
         blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(0, 0))}`}
       />

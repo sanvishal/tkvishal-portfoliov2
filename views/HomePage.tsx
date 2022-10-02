@@ -60,7 +60,7 @@ export const HomePage = () => {
         </Text>
         <Text fontSize="lg" mt={2}>
           Software Engineer @ <FancyLink href="https://www.presidio.com/">Presidio</FancyLink>, in
-          love with crafting magical experiences with design, code and art
+          love with crafting meaningful ideas and intefaces with design, code and art
         </Text>
       </MotionBox>
       <MotionBox
@@ -74,7 +74,7 @@ export const HomePage = () => {
           <Waves fill="grey" opacity="0.27" />
         </Box>
         <Spacer w="full" h={8} />
-        <Text fontWeight="700" lineHeight="1.8">
+        <Text fontWeight="700" lineHeight="1.8" fontSize={{ base: 'md', md: 'lg' }}>
           Building beautiful and performant applications with rich UI/UX design, highly devoted to
           the tiniest details, polish and craft in my work from backend to frontend till people ends
           ~

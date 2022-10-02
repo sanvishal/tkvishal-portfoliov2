@@ -60,7 +60,7 @@ export const HomePage = () => {
         </Text>
         <Text fontSize="lg" mt={2}>
           Software Engineer @ <FancyLink href="https://www.presidio.com/">Presidio</FancyLink>, in
-          love with crafting meaningful ideas and intefaces with design, code and art
+          love with crafting meaningful ideas and interfaces with design, code and art
         </Text>
       </MotionBox>
       <MotionBox

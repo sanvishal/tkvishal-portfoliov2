@@ -15,12 +15,14 @@ import {
   IconButton,
 } from '@chakra-ui/react';
 import { motion, Variants } from 'framer-motion';
-import { useState } from 'react';
+import Link from 'next/link';
+import { KeyboardEvent, useState } from 'react';
 import { FiX } from 'react-icons/fi';
 import { ChakraNextImage } from '../components/ChakraNextImage';
 import { ProjectBody } from '../components/ProjectBody';
 import { ProjectCard } from '../components/ProjectCard';
 import { projects } from '../data';
+import { LinkType } from '../types';
 
 const MotionBox = motion(Box);
 
@@ -45,6 +47,11 @@ export const ProjectsPage = () => {
     onOpen();
   };
 
+  const websiteLink =
+    projects[selectedProject].links?.find((link) => link.type === LinkType.WEBSITE)?.href || '';
+  const otherLink =
+    projects[selectedProject].links?.find((link) => link.type === LinkType.GITHUB)?.href || '';
+
   return (
     <>
       <MotionBox
@@ -62,7 +69,7 @@ export const ProjectsPage = () => {
         </Text>
       </MotionBox>
       <Spacer w="full" h={10} />
-      <SimpleGrid columns={{ base: 2, md: 3 }} spacing={{ base: 4, md: 8 }}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 4, md: 8 }} mb={10}>
         {projects.map((project, idx) => {
           return (
             <MotionBox
@@ -70,9 +77,16 @@ export const ProjectsPage = () => {
               initial="from"
               animate="to"
               exit="exit"
+              role="button"
               onClick={() => handleProjectOpen(idx)}
+              onKeyDown={(e: KeyboardEvent<HTMLButtonElement>) => {
+                if (e.key === 'Enter') {
+                  handleProjectOpen(idx);
+                }
+              }}
               key={project.name}
               transition={{ delay: (idx + 1) / 20 }}
+              tabIndex="0"
             >
               <ProjectCard project={project} />
             </MotionBox>
@@ -99,27 +113,31 @@ export const ProjectsPage = () => {
         <ModalOverlay />
         <ModalContent bg="dialogBg" position="relative" overflow="hidden" p={3}>
           <ModalHeader p={{ base: 0, md: 3 }}>
-            <HStack spacing={5}>
-              <Box p={3} border="1px solid" borderColor="iconBorderColor" borderRadius="8px">
-                <ChakraNextImage
-                  src={projects[selectedProject].image}
-                  width="50px"
-                  height="50px"
-                  quality={100}
-                  style={{ zIndex: 2, filter: 'drop-shadow(0 1px 4px rgba(0, 0, 0, 0.10))' }}
-                />
-              </Box>
-              <Box>
-                <VStack alignItems="flex-start" spacing={0}>
-                  <Text fontWeight="black" fontSize="2xl">
-                    {projects[selectedProject].name}
-                  </Text>
-                  <Text fontWeight="700" fontSize="large" opacity="0.5">
-                    {projects[selectedProject].description}
-                  </Text>
-                </VStack>
-              </Box>
-            </HStack>
+            <Link href={websiteLink || otherLink} passHref>
+              <a target={websiteLink || otherLink ? '_blank' : ''} rel="noopener noreferrer">
+                <HStack spacing={5}>
+                  <Box p={3} border="1px solid" borderColor="iconBorderColor" borderRadius="8px">
+                    <ChakraNextImage
+                      src={projects[selectedProject].image}
+                      width="50px"
+                      height="50px"
+                      quality={100}
+                      style={{ zIndex: 2, filter: 'drop-shadow(0 1px 4px rgba(0, 0, 0, 0.10))' }}
+                    />
+                  </Box>
+                  <Box>
+                    <VStack alignItems="flex-start" spacing={0}>
+                      <Text fontWeight="black" fontSize="2xl">
+                        {projects[selectedProject].name}
+                      </Text>
+                      <Text fontWeight="700" fontSize="large" opacity="0.5">
+                        {projects[selectedProject].description}
+                      </Text>
+                    </VStack>
+                  </Box>
+                </HStack>
+              </a>
+            </Link>
           </ModalHeader>
           <ModalBody p={{ base: 0, md: 3 }}>
             <Spacer w="full" h={4} />

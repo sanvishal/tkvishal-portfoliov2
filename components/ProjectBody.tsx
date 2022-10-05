@@ -56,21 +56,21 @@ const ProjectLinkButton = ({
   }%,0.3)`;
 
   return (
-    <Link href={href} passHref>
-      <a target="_blank" rel="noopener noreferrer">
-        <Button
-          leftIcon={<LinkIcon type={type} style={{ marginBottom: '2px' }} />}
-          background={bgColor}
-          color={textColor}
-          _hover={{ background: hoverColor }}
-          _focus={{ background: focusColor }}
-          fontSize="sm"
-          size={{ base: 'sm', md: 'md' }}
-        >
-          {children}
-        </Button>
-      </a>
-    </Link>
+    <Button
+      leftIcon={<LinkIcon type={type} style={{ marginBottom: '2px' }} />}
+      background={bgColor}
+      color={textColor}
+      _hover={{ background: hoverColor }}
+      _focus={{ background: focusColor }}
+      fontSize="sm"
+      size={{ base: 'sm', md: 'md' }}
+      as="a"
+      target="_blank"
+      rel="noopener noreferrer"
+      href={projectLink.href}
+    >
+      {children}
+    </Button>
   );
 };
 

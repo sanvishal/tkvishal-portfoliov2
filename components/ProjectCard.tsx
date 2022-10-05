@@ -1,4 +1,4 @@
-import { Box, Center, Text, VStack } from '@chakra-ui/react';
+import { Box, HStack, Text, VStack } from '@chakra-ui/react';
 import { Project } from '../types';
 import { ChakraNextImage } from './ChakraNextImage';
 
@@ -19,9 +19,9 @@ export const ProjectCard = ({ project }: { project: Project }) => {
       style={{ boxShadow: '0 1px 2px rgba(29,54,109,0.08)' }}
       boxShadow="0 1px 2px rgba(29,54,109,0.08)"
     >
-      <Center p={4} overflow="hidden">
-        <VStack>
-          <Box p={4} borderRadius={16} position="relative">
+      <Box p={6} overflow="hidden">
+        <HStack alignItems="flex-start" spacing={4}>
+          <Box p={0} borderRadius={16} position="relative">
             <ChakraNextImage
               src={project.image}
               width="70px"
@@ -32,7 +32,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                 zIndex: 1,
                 pointerEvents: 'none',
                 top: 'calc(50% - 30px)',
-                left: 'calc(50%)',
+                // left: 'calc(70%)',
                 width: '100%',
                 height: '100%',
                 transform: 'scaleY(3) scaleX(3.5)',
@@ -54,11 +54,16 @@ export const ProjectCard = ({ project }: { project: Project }) => {
               style={{ zIndex: 2, filter: 'drop-shadow(0 1px 4px rgba(0, 0, 0, 0.10))' }}
             />
           </Box>
-          <Text fontWeight="700" textShadow="0px 0px var(--chakra-colors-gray-500)">
-            {project.name}
-          </Text>
-        </VStack>
-      </Center>
+          <VStack alignItems="flex-start" spacing={1}>
+            <Text fontWeight="800" textShadow="0px 0px var(--chakra-colors-gray-500)" fontSize="xl">
+              {project.name}
+            </Text>
+            <Text fontWeight="500" textShadow="0px 0px var(--chakra-colors-gray-500)" fontSize="md">
+              {project.description}
+            </Text>
+          </VStack>
+        </HStack>
+      </Box>
     </Box>
   );
 };

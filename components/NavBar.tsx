@@ -1,20 +1,10 @@
-import {
-  Box,
-  Flex,
-  HStack,
-  Icon,
-  IconButton,
-  IconButtonProps,
-  Tooltip,
-  useColorMode,
-} from '@chakra-ui/react';
+import { Box, Flex, HStack, Icon, IconButton, Tooltip, useColorMode } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FiGift, FiHome, FiMoon, FiStar, FiSun } from 'react-icons/fi';
 import { usePalette } from '../contexts/PaletteContext';
-import { Socials } from './Socials/Socials';
 
 export const HeaderIcons = () => {
   const router = useRouter();
@@ -49,7 +39,6 @@ export const HeaderIcons = () => {
             <IconButton
               onMouseEnter={() => handleHover(0)}
               onMouseLeave={() => setIsHovered(false)}
-              as="a"
               aria-label="goto home"
               cursor="pointer"
               icon={<FiHome style={{ width: '20px' }} strokeWidth={2.5} />}
@@ -79,7 +68,6 @@ export const HeaderIcons = () => {
             <IconButton
               onMouseEnter={() => handleHover(1)}
               onMouseLeave={() => setIsHovered(false)}
-              as="a"
               aria-label="goto projects"
               cursor="pointer"
               icon={<FiStar style={{ width: '20px' }} strokeWidth={2.5} />}

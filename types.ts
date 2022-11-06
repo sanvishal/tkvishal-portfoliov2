@@ -8,6 +8,14 @@ export type Project = {
   images?: { link: string; alt?: string }[];
 };
 
+export type RandomProject = {
+  name: string;
+  image: string;
+  description: string;
+  about: string;
+  link: string;
+};
+
 export enum LinkType {
   'GITHUB' = 'GITHUB',
   'WEBSITE' = 'WEBSITE',

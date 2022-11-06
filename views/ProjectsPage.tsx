@@ -21,7 +21,8 @@ import { FiX } from 'react-icons/fi';
 import { ChakraNextImage } from '../components/ChakraNextImage';
 import { ProjectBody } from '../components/ProjectBody';
 import { ProjectCard } from '../components/ProjectCard';
-import { projects } from '../data';
+import { RandomProjectItem } from '../components/RandomProjectItem';
+import { projects, randomProjects } from '../data';
 import { LinkType } from '../types';
 
 const MotionBox = motion(Box);
@@ -93,6 +94,44 @@ export const ProjectsPage = () => {
           );
         })}
       </SimpleGrid>
+      <Spacer w="full" h={8} />
+      <MotionBox
+        variants={fadeInUp}
+        initial="from"
+        animate="to"
+        exit="exit"
+        transition={{ delay: 0.5 }}
+      >
+        <Text fontWeight="700" fontSize="2xl">
+          Games & Experiments
+        </Text>
+        <Text fontWeight="400" fontSize="md" opacity="0.5">
+          games and random thought blurbs made into something useful/useless
+        </Text>
+      </MotionBox>
+      <Spacer w="full" h={10} />
+      <VStack alignItems="flex-start" w="full" spacing={4}>
+        {randomProjects.map((project, idx) => {
+          return (
+            <MotionBox
+              variants={fadeInUp}
+              initial="from"
+              animate="to"
+              exit="exit"
+              as="a"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={project.link}
+              key={project.name}
+              transition={{ delay: 0.5 + (idx + 1) / 20 }}
+              tabIndex="0"
+              w="full"
+            >
+              <RandomProjectItem project={project} key={project.name} />
+            </MotionBox>
+          );
+        })}
+      </VStack>
       <IconButton
         icon={<FiX size="24" />}
         aria-label="modal-close-button, press escape to close too"

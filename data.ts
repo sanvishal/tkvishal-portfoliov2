@@ -1,4 +1,4 @@
-import { LinkType, Project } from './types';
+import { LinkType, Project, RandomProject } from './types';
 
 export const projects: Project[] = [
   {
@@ -88,6 +88,32 @@ export const projects: Project[] = [
         type: LinkType.BLOG,
         name: 'Read About it',
         href: 'https://vishaltk.hashnode.dev/teenytools-a-quick-all-in-one-toolbox-of-small-tools-for-designers-and-designers-who-code',
+      },
+    ],
+  },
+  {
+    name: 'DiddoHub',
+    image: '/images/diddohub.png',
+    description: 'Open Accessible Education with Youtube',
+    accentColor: '#226FEE',
+    about: [
+      'Usually, whenever I get an idea with a broad scope, the first thing I do is sit on it for a couple of weeks(procrastination is a good thing sometimes :P). I get started on the design, colors, typography, and the UI first before getting into the "gotchas" of actually executing the idea and making it so that my I can be as creative as I want with the design decisions. One such idea is diddohub.',
+      '"There is a high saturation of free learning content(youtube videos, blogs). It becomes hard to choose a correct way to learn! diddohub solves it by providing a platform to curate learning content in a enjoyable way for curators and learners. Curators could use diddohub as a tool to keep track of their learning progress/take notes and later publish them for others to learn and follow their path." — was the initial pitch for diddohub. You can know more about diddohub on the slide deck.',
+      'The MVP itself was a huge task to accomplish by myself, coincidentally, my company announced a 36 hour internal hackathon. I immediately formed a team of 6(ARTEMIS) and pitched the idea to my team mates. All of them loved it! We built a M-MVP(most-most viable product) and presented to everyone. All of the judges liked it and we won the hackathon 🥳🎉',
+      'Unintentionally, I learned a lot about Product Design, how to fail faster, how to not eat junk food at 4 AM in the morning, and how to pick the correct genre of songs to code faster 🎵',
+      "If you ever have a wild idea that you think is good, participate in a hackathon. It is one of the best way to test the product market fit. If it doesn't work, you get free hackathon swags and fun experiences, if it works you get a validated idea that you can pursure further. It's a win-win situation ~",
+      "I've been making a public-releasable version of diddohub under the wraps, coming soon! ✨",
+      "(ps... I'm the one in the red hoodie 👇🏼)",
+    ],
+    images: [
+      { link: '/images/diddohub/dd-1.jpg', alt: 'diddohub' },
+      { link: '/images/diddohub/dd-2.jpg', alt: 'diddohub team - ATREMIS' },
+    ],
+    links: [
+      {
+        type: LinkType.WEBSITE,
+        name: 'Slide Deck',
+        href: 'https://drive.google.com/file/d/1r6bT7cl8nPue7QGrfrikaNeD1JlhRLxw/view?usp=share_link',
       },
     ],
   },
@@ -216,7 +242,7 @@ export const projects: Project[] = [
   {
     name: '...and many more',
     image: '/images/github.png',
-    description: 'more experiments 🔬',
+    description: 'more stuff 🔬',
     accentColor: '#333333',
     links: [
       {
@@ -225,6 +251,46 @@ export const projects: Project[] = [
         href: 'https://github.com/sanvishal',
       },
     ],
+  },
+];
+
+export const randomProjects: RandomProject[] = [
+  {
+    name: 'Curse of the Ego King',
+    description: 'a fast-paced action game about a king with big ego',
+    about: 'this game won the "most creative" award in repl.it kaboom game jam 2021',
+    image: '/images/randoms/ego.png',
+    link: 'https://replit.com/@vishal1999tk/Curse-of-the-Ego-King?v=1',
+  },
+  {
+    name: 'itch.io Profile',
+    description: 'all my other games made before 2018',
+    about:
+      'fun fact: I learnt programming and design through make games for fun, unintentionally :P',
+    image: '/images/randoms/itch.jpg',
+    link: 'https://tkgames.itch.io',
+  },
+  {
+    name: 'diddohub(beta)',
+    description: 'notion-like text editor that syncs with youtube video',
+    about: 'an improved version of this POC won the company internal hackathon!',
+    image: '/images/diddohub.png',
+    link: 'https://drive.google.com/file/d/1r6bT7cl8nPue7QGrfrikaNeD1JlhRLxw/view',
+  },
+  {
+    name: 'Chaos Shapes',
+    description: 'chaotic but beautiful looking animated shapes',
+    about:
+      'made this by accident while trying to learn math functions, lots of people liked it on replit',
+    image: '/images/randoms/randomph.png',
+    link: 'https://replit.com/@vishal1999tk/Random-Shapes-Generator?v=1',
+  },
+  {
+    name: 'Generative Scapes',
+    description: 'minimal & beautiful mountain scapes with math',
+    about: 'the beauty in simple math functions <3',
+    image: '/images/randoms/randomph.png',
+    link: 'https://replit.com/@vishal1999tk/Generative-Scapes?v=1',
   },
 ];
 

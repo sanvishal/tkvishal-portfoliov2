@@ -239,19 +239,19 @@ export const projects: Project[] = [
     about: ['some people like the old design better lol :P'],
     images: [],
   },
-  {
-    name: '...and many more',
-    image: '/images/github.png',
-    description: 'more stuff 🔬',
-    accentColor: '#333333',
-    links: [
-      {
-        type: LinkType.GITHUB,
-        name: 'View My GitHub',
-        href: 'https://github.com/sanvishal',
-      },
-    ],
-  },
+  // {
+  //   name: '...and many more',
+  //   image: '/images/github.png',
+  //   description: 'more stuff 🔬',
+  //   accentColor: '#333333',
+  //   links: [
+  //     {
+  //       type: LinkType.GITHUB,
+  //       name: 'View My GitHub',
+  //       href: 'https://github.com/sanvishal',
+  //     },
+  //   ],
+  // },
 ];
 
 export const randomProjects: RandomProject[] = [

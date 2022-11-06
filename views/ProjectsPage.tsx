@@ -110,7 +110,7 @@ export const ProjectsPage = () => {
         </Text>
       </MotionBox>
       <Spacer w="full" h={10} />
-      <VStack alignItems="flex-start" w="full" spacing={4}>
+      <VStack alignItems="flex-start" w="full" spacing={4} mb={10}>
         {randomProjects.map((project, idx) => {
           return (
             <MotionBox

@@ -29,7 +29,8 @@ export const theme = extendTheme({
     },
     Tooltip: {
       baseStyle: (props: any) => ({
-        borderRadius: '7px',
+        borderRadius: '6px',
+        fontWeight: 'bold',
         border: mode(
           '1px solid hsla(var(--hue), 60%, 10%, 0.3)',
           '1px solid hsla(var(--hue), 92%, 60%, 0.3)'

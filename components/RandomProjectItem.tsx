@@ -1,14 +1,17 @@
-import { Box, Center, HStack, Text, Tooltip } from '@chakra-ui/react';
+import { Box, Center, HStack, Stack, Text, Tooltip } from '@chakra-ui/react';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { RandomProject } from '../types';
 
 export const RandomProjectItem = ({ project }: { project: RandomProject }) => {
   return (
     <Tooltip label={project.about} placement="top-end">
-      <HStack
+      <Stack
         w="full"
-        justifyContent="space-between"
+        direction={{ base: 'column', md: 'row' }}
+        justifyContent={{ base: 'flex-start', md: 'space-between' }}
+        alignItems={{ base: 'flex-start', md: 'center' }}
         position="relative"
+        spacing={{ base: 0.5, md: 3 }}
         p={2}
         role="group"
         _hover={{
@@ -26,7 +29,7 @@ export const RandomProjectItem = ({ project }: { project: RandomProject }) => {
             left: 0,
             top: 0,
             borderRadius: '5px',
-            background: 'var(--hue-col-2)',
+            background: 'var(--hue-col-3)',
             opacity: 0,
             transformOrigin: 'left 50%',
             transform: 'scale(0.5)',
@@ -68,12 +71,31 @@ export const RandomProjectItem = ({ project }: { project: RandomProject }) => {
           <Text fontSize="lg" fontWeight="400">
             {project.name}
           </Text>
+          <Center
+            mt="4px !important"
+            opacity="0.2"
+            color="contentColor"
+            display={{ base: 'inline-block', md: 'none' }}
+          >
+            <FiArrowUpRight
+              style={{
+                width: '25px',
+              }}
+              strokeWidth={2.5}
+            />
+          </Center>
         </HStack>
-        <Box flexGrow={1} bg="contentColor" h="1px" opacity="0.06"></Box>
-        <Text textAlign="right" opacity="0.5" maxW="400px">
+        <Box
+          flexGrow={1}
+          bg="contentColor"
+          h="1px"
+          opacity="0.06"
+          display={{ base: 'none', md: 'block' }}
+        ></Box>
+        <Text opacity="0.5" maxW="400px">
           {project.description}
         </Text>
-      </HStack>
+      </Stack>
     </Tooltip>
   );
 };

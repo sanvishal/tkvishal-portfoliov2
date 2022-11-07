@@ -11,6 +11,7 @@ export default class Document extends NextDocument {
           <meta property="og:title" content="Vishal TK" />
           <meta property="og:description" content="Developer x Designer" />
           <meta property="og:url" content="https://www.vishaltk.dev" />
+          <meta property="og:image" content="https://vishaltk.dev/images/og.png" />
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content="Vishal TK" />
           <meta property="og:locale" content="en_US" />

@@ -22,7 +22,7 @@ export const HeaderIcons = () => {
   };
 
   return (
-    <HStack pos="relative">
+    <HStack pos="relative" spacing={0}>
       <Box
         pos="absolute"
         hidden={!router.isReady}
@@ -32,7 +32,7 @@ export const HeaderIcons = () => {
         bg={'var(--chakra-colors-bgGradientButton)'}
         opacity={isHovered ? 0.3 : 0}
         transition="all 0.2s ease-in-out"
-        left={`${40 * selectedIconIdx + 8 * (selectedIconIdx + 1)}px`}
+        left={`${40 * selectedIconIdx + (selectedIconIdx > 0 ? 8 * selectedIconIdx - 1 : 0)}px`}
       ></Box>
       <Tooltip label="home">
         <Box>
@@ -59,6 +59,7 @@ export const HeaderIcons = () => {
                     : 'transparent',
               }}
               size="md"
+              mr="8px"
             ></IconButton>
           </Link>
         </Box>
@@ -88,6 +89,7 @@ export const HeaderIcons = () => {
                     : 'transparent',
               }}
               size="md"
+              mr="8px"
             ></IconButton>
           </Link>
         </Box>

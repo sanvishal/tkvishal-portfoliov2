@@ -4,12 +4,14 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  Button,
   HStack,
   Spacer,
   Text,
+  Tooltip,
 } from '@chakra-ui/react';
 import { motion, Variants } from 'framer-motion';
-import { FiArrowDown, FiChevronDown } from 'react-icons/fi';
+import { FiArrowDown, FiChevronDown, FiFile } from 'react-icons/fi';
 
 const MotionBox = motion(Box);
 const MotionAccordianItem = motion(AccordionItem);
@@ -77,12 +79,28 @@ export const WorkPage = () => {
         exit="exit"
         transition={{ delay: 0 }}
       >
-        <Text fontWeight="700" fontSize="2xl">
-          Work Experience
-        </Text>
-        <Text fontWeight="400" fontSize="md" opacity="0.5">
-          got paid to write code
-        </Text>
+        <HStack justifyContent="space-between" alignItems="flex-start">
+          <Box>
+            <Text fontWeight="700" fontSize="2xl">
+              Work Experience
+            </Text>
+            <Text fontWeight="400" fontSize="md" opacity="0.5">
+              got paid to write code
+            </Text>
+          </Box>
+          <Tooltip label="opens up a drive link, does not download on click :)">
+            <Button
+              size="sm"
+              leftIcon={<FiFile />}
+              as="a"
+              href="https://drive.google.com/file/d/18aXKzpoh4VSQU_0cxPvilM_XGhFXAGSj/view?usp=share_link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </Button>
+          </Tooltip>
+        </HStack>
       </MotionBox>
       <Spacer w="full" h={10} />
       <Accordion defaultIndex={[0]} allowMultiple mb={10}>

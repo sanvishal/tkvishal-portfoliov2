@@ -2,8 +2,8 @@ import { Box, Flex, HStack, Icon, IconButton, Tooltip, useColorMode } from '@cha
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
-import { FiGift, FiHome, FiMoon, FiStar, FiSun } from 'react-icons/fi';
+import { useEffect, useState } from 'react';
+import { FiBriefcase, FiGift, FiHome, FiMoon, FiStar, FiSun } from 'react-icons/fi';
 import { usePalette } from '../contexts/PaletteContext';
 
 export const HeaderIcons = () => {
@@ -13,6 +13,7 @@ export const HeaderIcons = () => {
   const paths = {
     HOME: '/',
     PROJECTS: '/projects',
+    WORK: '/work',
   };
 
   const handleHover = (idx: number) => {
@@ -91,6 +92,35 @@ export const HeaderIcons = () => {
           </Link>
         </Box>
       </Tooltip>
+      <Tooltip label="work">
+        <Box>
+          <Link href="/work">
+            <IconButton
+              onMouseEnter={() => handleHover(2)}
+              onMouseLeave={() => setIsHovered(false)}
+              aria-label="goto work"
+              cursor="pointer"
+              icon={<FiBriefcase style={{ width: '20px' }} strokeWidth={2.5} />}
+              transition="all 0.4s ease-in-out"
+              borderRadius={10}
+              color="commonIconColor"
+              opacity="1"
+              bg={
+                router.pathname === paths.WORK
+                  ? 'var(--chakra-colors-bgGradientButton)'
+                  : 'transparent'
+              }
+              _hover={{
+                background:
+                  router.pathname === paths.WORK
+                    ? 'var(--chakra-colors-bgGradientButton)'
+                    : 'transparent',
+              }}
+              size="md"
+            ></IconButton>
+          </Link>
+        </Box>
+      </Tooltip>
     </HStack>
   );
 };
@@ -98,6 +128,18 @@ export const HeaderIcons = () => {
 export const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { changePalette } = usePalette();
+  const [isChangePaletteButtonClicked, setIsChangePaletteButtonClicked] = useState(false);
+
+  useEffect(() => {
+    const isPalettedChanged = sessionStorage.getItem('PALETTE_CHANGED');
+    setIsChangePaletteButtonClicked(Boolean(isPalettedChanged));
+  }, []);
+
+  const handleChangePaletteClick = () => {
+    sessionStorage.setItem('PALETTE_CHANGED', 'true');
+    setIsChangePaletteButtonClicked(true);
+    changePalette();
+  };
 
   return (
     <Flex as="nav" align="center" justify="space-between" wrap="wrap" py={3} color="white">
@@ -137,8 +179,21 @@ export const NavBar = () => {
                   strokeWidth={2.5}
                 />
               }
+              sx={{
+                '&:after': {
+                  content: '""',
+                  position: 'absolute',
+                  background: 'var(--complimentary2)',
+                  width: '5px',
+                  height: '5px',
+                  top: '10px',
+                  right: '7px',
+                  borderRadius: '50%',
+                  opacity: isChangePaletteButtonClicked ? 0 : 1,
+                },
+              }}
               aria-label="Change Color Theme"
-              onClick={changePalette}
+              onClick={handleChangePaletteClick}
               bg="transparent"
               _hover={{ background: 'transparent' }}
               _focus={{ background: 'transparent' }}

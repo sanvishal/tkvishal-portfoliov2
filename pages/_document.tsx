@@ -19,7 +19,9 @@ export default class Document extends NextDocument {
           <meta name="twitter:title" content="Vishal TK" />
           <meta name="twitter:description" content="Developer x Designer" />
           <meta name="twitter:card" content="summary_large_image"></meta>
-          <meta name="twitter:image" content="https://vishaltk.dev/images/og.jpg"></meta>
+          <meta name="twitter:image:src" content="https://vishaltk.dev/images/og.jpg"></meta>
+          <meta name="twitter:image:alt" content="Vishal TK"></meta>
+          <meta name="twitter:tile:image" content="https://vishaltk.dev/images/og.jpg"></meta>
           <meta name="author" content="Vishal TK" />
           <meta name="description" content="Developer x Designer" />
         </Head>

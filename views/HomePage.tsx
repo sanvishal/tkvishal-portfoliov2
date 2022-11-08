@@ -45,6 +45,10 @@ export const HomePage = () => {
           quality={100}
           layout="responsive"
           showBlur={false}
+          as="a"
+          // @ts-ignore
+          href="https://www.youtube.com/watch?v=WntjAM2wqF8"
+          target="_blank"
         />
       </MotionBox>
       <Spacer w="full" h={10} />

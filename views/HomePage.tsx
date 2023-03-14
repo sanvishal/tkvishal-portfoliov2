@@ -63,8 +63,9 @@ export const HomePage = () => {
           Vishal <span className="gradiant-text">TK</span>
         </Text>
         <Text fontSize="lg" mt={2}>
-          Software Engineer @ <FancyLink href="https://www.presidio.com/">Presidio</FancyLink>, in
-          love with crafting meaningful ideas and interfaces with design, code and art
+          Senior Software Engineer @{' '}
+          <FancyLink href="https://www.presidio.com/">Presidio</FancyLink>, in love with crafting
+          meaningful ideas and interfaces with design, code and art
         </Text>
       </MotionBox>
       <MotionBox

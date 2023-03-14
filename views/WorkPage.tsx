@@ -93,7 +93,7 @@ export const WorkPage = () => {
               size="sm"
               leftIcon={<FiFile />}
               as="a"
-              href="https://drive.google.com/file/d/18aXKzpoh4VSQU_0cxPvilM_XGhFXAGSj/view?usp=share_link"
+              href="https://drive.google.com/file/d/1aeQrSqX_UNhQQo9CkrfAGRfUYnA1pWUU/view?usp=share_link"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -110,6 +110,58 @@ export const WorkPage = () => {
           animate="to"
           exit="exit"
           transition={{ delay: 0.1 }}
+          border="none"
+        >
+          <AccordionButton
+            display="flex"
+            flexDirection="column"
+            alignItems="flex-start"
+            p={0}
+            role="group"
+          >
+            <HStack justifyContent="flex-start" alignItems="center" spacing={3}>
+              <Text fontSize="lg" fontWeight="bold">
+                Presidio
+              </Text>
+              <ArrowExpand />
+              <Text fontSize="lg" fontWeight="bold">
+                Senior Software Engineer
+              </Text>
+            </HStack>
+            <Text fontSize="md" fontWeight="bold" opacity="0.5">
+              Mar 2023 - Present
+            </Text>
+          </AccordionButton>
+          <AccordionPanel pos="relative">
+            <SideLine />
+            <Box
+              as="ul"
+              sx={{
+                li: {
+                  margin: '8px 0',
+                  marginLeft: '30px',
+
+                  '&::marker': {
+                    content: '"-  "',
+                  },
+                },
+              }}
+            >
+              <li>Writing scalable IaC(Infrastructure as Code) in typescript using CDK</li>
+              <li>
+                Managing complex async dynamic state machines with AWS step functions and building
+                an interactive flow visualizer on the frontend
+              </li>
+            </Box>
+          </AccordionPanel>
+        </MotionAccordianItem>
+        <Spacer w="full" h={6} />
+        <MotionAccordianItem
+          variants={fadeInUp}
+          initial="from"
+          animate="to"
+          exit="exit"
+          transition={{ delay: 0.2 }}
           border="none"
         >
           <AccordionButton
@@ -171,7 +223,7 @@ export const WorkPage = () => {
           initial="from"
           animate="to"
           exit="exit"
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.3 }}
           border="none"
         >
           <AccordionButton
@@ -219,7 +271,7 @@ export const WorkPage = () => {
           initial="from"
           animate="to"
           exit="exit"
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.4 }}
           border="none"
         >
           <AccordionButton

@@ -121,6 +121,55 @@ export const WorkPage = () => {
           >
             <HStack justifyContent="flex-start" alignItems="center" spacing={3}>
               <Text fontSize="lg" fontWeight="bold">
+                PushOwl
+              </Text>
+              <ArrowExpand />
+              <Text fontSize="lg" fontWeight="bold">
+                Frontend Engineer
+              </Text>
+            </HStack>
+            <Text fontSize="md" fontWeight="bold" opacity="0.5">
+              Jul 2023 - Present
+            </Text>
+          </AccordionButton>
+          <AccordionPanel pos="relative">
+            <SideLine />
+            <Box
+              as="ul"
+              sx={{
+                li: {
+                  margin: '8px 0',
+                  marginLeft: '30px',
+
+                  '&::marker': {
+                    content: '"-  "',
+                  },
+                },
+              }}
+            >
+              <li>Working on shopify apps, currently neck-deep into the ecosystem</li>
+              <li>Managing multiple huge frontend codebases serving millions of clients</li>
+            </Box>
+          </AccordionPanel>
+        </MotionAccordianItem>
+        <Spacer w="full" h={6} />
+        <MotionAccordianItem
+          variants={fadeInUp}
+          initial="from"
+          animate="to"
+          exit="exit"
+          transition={{ delay: 0.1 }}
+          border="none"
+        >
+          <AccordionButton
+            display="flex"
+            flexDirection="column"
+            alignItems="flex-start"
+            p={0}
+            role="group"
+          >
+            <HStack justifyContent="flex-start" alignItems="center" spacing={3}>
+              <Text fontSize="lg" fontWeight="bold">
                 Presidio
               </Text>
               <ArrowExpand />
@@ -129,7 +178,7 @@ export const WorkPage = () => {
               </Text>
             </HStack>
             <Text fontSize="md" fontWeight="bold" opacity="0.5">
-              Mar 2023 - Present
+              Mar 2023 - Jul 2023
             </Text>
           </AccordionButton>
           <AccordionPanel pos="relative">

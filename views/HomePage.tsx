@@ -47,7 +47,7 @@ export const HomePage = () => {
           showBlur={false}
           as="a"
           // @ts-ignore
-          href="https://www.youtube.com/watch?v=WntjAM2wqF8"
+          href="https://www.youtube.com/watch?v=22rCPuPh1Gw"
           target="_blank"
         />
       </MotionBox>
@@ -63,9 +63,8 @@ export const HomePage = () => {
           Vishal <span className="gradiant-text">TK</span>
         </Text>
         <Text fontSize="lg" mt={2}>
-          Senior Software Engineer @{' '}
-          <FancyLink href="https://www.presidio.com/">Presidio</FancyLink>, in love with crafting
-          meaningful ideas and interfaces with design, code and art
+          Frontend Engineer @ <FancyLink href="https://pushowl.com/">PushOwl</FancyLink>, in love
+          with crafting meaningful ideas and interfaces with design, code and art
         </Text>
       </MotionBox>
       <MotionBox
